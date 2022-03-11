@@ -1,4 +1,10 @@
 * {
-    padding: auto;
-    margin: auto;
+    /* padding: auto;
+    margin: auto; */
+    box-sizing: border-box;
+}
+
+#search-hints{
+    display: flex;
+    flex-direction: column;
 }
