@@ -1,3 +1,6 @@
+<?php
+    include "php/connect.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,7 +28,6 @@
         <div id="search-hints" style="display: none; border: solid 1px black">
 
             <?php
-                include "php/connect.php";
 
                 $query = "SELECT first_name, last_name, driver_id FROM drivers";
 

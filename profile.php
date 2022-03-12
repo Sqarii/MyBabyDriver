@@ -1,3 +1,4 @@
+<?php include "php/connect.php"; ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -9,10 +10,16 @@
     <body>
 
         <?php
-
-            include "php/connect.php";
             
-            include "php/identify.php";
+            $url = 'https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+
+            $url_par = parse_url($url);
+
+            parse_str($url_par['query'], $url_id);
+
+            $sql = "SELECT * FROM drivers WHERE driver_id =" . $url_id['driver'];
+
+            $result = $conn->query($sql);
 
             while($row = mysqli_fetch_assoc($result)){
 
@@ -40,7 +47,7 @@
                 
                 echo "<br><br>";
 
-                echo "<a target=_blank href=rating.php?driver=" . $id .">test</a>"
+                echo "<a href=rating.php?driver=" . $id .">test</a>"
 
             ?>
 
